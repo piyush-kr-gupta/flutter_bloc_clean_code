@@ -18,9 +18,7 @@ class RoundButton extends StatelessWidget {
       onTap: onPress,
       child: Container(
         height: height,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
         child: Center(child: Text(title)),
       ),
     );

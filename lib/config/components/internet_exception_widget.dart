@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_clean_code/config/color/app_colors.dart';
 
 class InternetExceptionWidget extends StatelessWidget {
-  final VoidCallback onPress;
+  final VoidCallback onPressRetry;
 
-  const InternetExceptionWidget({super.key, required this.onPress});
+  const InternetExceptionWidget({super.key, required this.onPressRetry});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class InternetExceptionWidget extends StatelessWidget {
           ),
         ),
         ElevatedButton(
-          onPressed: onPress,
+          onPressed: onPressRetry,
           child: Text("RETRY", style: Theme.of(context).textTheme.bodySmall),
         ),
       ],
