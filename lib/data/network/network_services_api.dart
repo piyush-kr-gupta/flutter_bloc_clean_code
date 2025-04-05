@@ -29,7 +29,7 @@ class NetworkServicesApi implements BaseApiServices {
     dynamic jsonResponse;
     try {
       final response = await http
-          .post(Uri.parse(url), body: data.)
+          .post(Uri.parse(url), body: data)
           .timeout(const Duration(seconds: 60));
       jsonResponse = returnResponse(response);
       if (response.statusCode == 200) {}
