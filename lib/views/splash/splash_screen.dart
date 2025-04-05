@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             children: [
               InternetExceptionWidget(onPressRetry: () {
-                throw NoInternetException("no intttttttt", "preff");
+                throw NoInternetException("no intttttttt");
               }),
               SizedBox(height: 30),
               LoadingWidget(),

@@ -16,10 +16,15 @@ class NoInternetException extends AppException {
 }
 
 class UnAuthorizedException extends AppException {
-  UnAuthorizedException([String? message]) : super(message!, "Unauthorized");
+  UnAuthorizedException([String? message]) : super(message!, "Unauthorized exception");
 }
 
 class RequestTimeoutException extends AppException {
   RequestTimeoutException([String? message])
     : super(message!, "Request timed out");
+}
+
+class InternalServerErrorException extends AppException {
+  InternalServerErrorException([String? message])
+      : super(message ?? "Something went wrong on the server", "Server Error");
 }
