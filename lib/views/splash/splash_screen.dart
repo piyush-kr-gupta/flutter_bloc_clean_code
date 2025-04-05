@@ -4,6 +4,7 @@ import 'package:flutter_bloc_clean_code/config/components/loading_widget.dart';
 import 'package:flutter_bloc_clean_code/config/components/round_button.dart';
 import 'package:flutter_bloc_clean_code/config/routes/routes_name.dart';
 import 'package:flutter_bloc_clean_code/data/exceptions/app_exceptions.dart';
+import 'package:flutter_bloc_clean_code/services/splash_services.dart';
 import 'package:flutter_bloc_clean_code/views/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,6 +15,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final SplashServices _splashServices = SplashServices();
+
+  @override
+  void initState() {
+    super.initState();
+    _splashServices.isLogin(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +30,11 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Center(
           child: Column(
             children: [
-              InternetExceptionWidget(onPressRetry: () {
-                throw NoInternetException("no intttttttt");
-              }),
+              InternetExceptionWidget(
+                onPressRetry: () {
+                  throw NoInternetException("no intttttttt");
+                },
+              ),
               SizedBox(height: 30),
               LoadingWidget(),
               RoundButton(
